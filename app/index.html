@@ -25,58 +25,62 @@
   
   <a href="#content" class="sr-only">Suoraan sisältöön</a>
   
-  <header class="navbar navbar-inverse navbar-static-top hy-navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hy-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <header class="hy-header">
+    <div class="navbar navbar-inverse navbar-static-top hy-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hy-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        
+        <nav class="collapse navbar-collapse" id="hy-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a class="hy-navbar__link--main" href="#">
+                <i class="glyphicon glyphicon-home visible-xs"></i> Etusivu</a>
+            </li>
+            <li>
+              <a class="hy-navbar__link--main" href="#">
+                <i class="glyphicon glyphicon-plus visible-xs"></i> Taustaa
+              </a>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle hy-navbar__link--main" data-toggle="dropdown" href="#">
+                <i class="glyphicon glyphicon-plus visible-xs"></i> Ohjeet
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="hy-navbar__link--main" href="#">Olemassa olevat palvelut</a></li>
+                <li><a class="hy-navbar__link--main" href="#">Uudet palvelut</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle hy-navbar__link--main" data-toggle="dropdown" href="#">
+                <i class="glyphicon glyphicon-plus visible-xs"></i> Lue lisää
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Trendit</a></li>
+                <li><a href="#">Sanasto</a></li>
+                <li><a href="#">Linkit</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="hy-navbar__link--main" href="#">
+                <i class="glyphicon glyphicon-plus visible-xs"></i> Kysy lisää
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      
-      <nav class="collapse navbar-collapse" id="hy-navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a class="hy-navbar__link--main" href="#">
-              <i class="glyphicon glyphicon-home"></i> Etusivu</a>
-          </li>
-          <li>
-            <a class="hy-navbar__link--main" href="#">
-              <i class="glyphicon glyphicon-plus"></i> Taustaa
-            </a>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle hy-navbar__link--main" data-toggle="dropdown" href="#">
-              <i class="glyphicon glyphicon-plus"></i> Ohjeet
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="hy-navbar__link--main" href="#">Olemassa olevat palvelut</a></li>
-              <li><a class="hy-navbar__link--main" href="#">Uudet palvelut</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle hy-navbar__link--main" data-toggle="dropdown" href="#">
-              <i class="glyphicon glyphicon-plus"></i> Lue lisää
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Trendit</a></li>
-              <li><a href="#">Sanasto</a></li>
-              <li><a href="#">Linkit</a></li>
-            </ul>
-          </li>
-          <li>
-            <a class="hy-navbar__link--main" href="#">
-              <i class="glyphicon glyphicon-plus"></i> Kysy lisää
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
+    
+    <div class="container hy-logo"></div>
   </header>
   
-  <div class="container hy-logo"></div>
+  
   
   <!-- visible on child page
   <div class="container">
@@ -98,10 +102,10 @@
         </div>
       </div>
       <div class="row hy-lift-triplewide">
-        <div class="col-xs-12 hy-lift-triplewide__image">
+        <div class="col-xs-12 col-sm-8 hy-lift-triplewide__image">
           <img class="img-responsive" src="images/lift_767x399.jpg" alt="gradient">
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4">
           <h4 class="hy-lift-triplewide__heading">Otsikko</h4>
           <p class="hy-lift-triplewide__bodytext">Teksti</p>
           <p class="hy-lift-triplewide__bodytext">Teksti</p>
@@ -112,7 +116,7 @@
     <div class="hy-mosaic-background">
       <div class="container">
         <ul class="row hy-mosaic">
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item--white">
+          <li class="col-xs-6 col-sm-4 col-md-offset-5 col-md-2 hy-mosaic__item hy-mosaic__item--white">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">
@@ -124,7 +128,7 @@
               </div>
             </div>
           </li>
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item--blue">
+          <li class="col-xs-6 col-sm-4 col-md-2 hy-mosaic__item hy-mosaic__item--blue">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">
@@ -136,7 +140,7 @@
               </div>
             </div>
           </li>
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item--blue">
+          <li class="col-xs-6 col-sm-4 col-md-2 hy-mosaic__item hy-mosaic__item--blue">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">
@@ -146,7 +150,7 @@
               </div>
             </div>
           </li>
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item--black">
+          <li class="col-xs-6 col-sm-4 col-md-offset-5 col-md-2 hy-mosaic__item hy-mosaic__item--black">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">
@@ -156,7 +160,7 @@
               </div>
             </div>
           </li>
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item--black">
+          <li class="col-xs-6 col-sm-4 col-md-2 hy-mosaic__item hy-mosaic__item--black">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">
@@ -168,7 +172,7 @@
               </div>
             </div>
           </li>
-          <li class="col-xs-6 hy-mosaic__item hy-mosaic__item">
+          <li class="col-xs-6 col-sm-4 col-md-2 hy-mosaic__item hy-mosaic__item">
             <div class="hy-mosaic__ratio--square"></div>
             <div class="hy-mosaic__element">
               <div class="hy-mosaic__valign">

@@ -108,6 +108,7 @@ module.exports = function (grunt) {
         },
         compass: {
             options: {
+                require: 'compass-flexbox',
                 sassDir: '<%= yeoman.app %>/styles',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/images/generated',

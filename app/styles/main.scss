@@ -2,6 +2,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'compass/css3/images';
 
+//compass-flexbox extension
+@import 'flexbox';
+
 @import 'sass-bootstrap/lib/bootstrap';
 
 .browsehappy {
@@ -140,6 +143,15 @@ $link-color-active-on-background: $link-color-hover-on-background;
 }
 
 
+.hy-header {
+  //change .hy-navbar and .hy-logo order for tablet onwards (= .hidden-xs bootstrap class)
+  @media (min-width: $screen-sm-min) {
+    //compass-flexbox extension
+    @include display-flex;
+    @include flex-direction(column-reverse);
+  }
+}
+
 .hy-navbar {
   @extend %hy-background;
 }
@@ -148,6 +160,27 @@ $link-color-active-on-background: $link-color-hover-on-background;
 
 .hy-navbar__link--main {
   text-transform: uppercase;
+  
+  // override bootstrap .visible-xs display: block !important for icons on mobile
+  @media (max-width: ($screen-sm-min - 1)) {
+    & > .visible-xs {
+      display: inline !important;
+    }
+  }
+}
+
+.hy-logo {
+  background: no-repeat image-url('logo_1257x420.png');
+  background-position: center center;
+  background-size: contain;
+  height: 9rem;
+  
+  // add top/bottom margin and realign for tablet onwards (= .hidden-xs bootstrap class)
+  @media (min-width: $screen-sm-min) {
+    background-position: left center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 // http://css-tricks.com/snippets/css/css-triangle/
 /* tablet / desktop
@@ -165,13 +198,6 @@ $link-color-active-on-background: $link-color-hover-on-background;
   }
 }
 */
-
-
-.hy-logo {
-  background: center center no-repeat image-url('logo_1257x420.png');
-  background-size: contain;
-  height: 9rem;
-}
 
 
 .hy-lift-triplewide {
@@ -203,12 +229,50 @@ $link-color-active-on-background: $link-color-hover-on-background;
   padding-left: 1em;
   padding-right: 1em;
 }
+
 .hy-mosaic__item {
   display: inline-block;
   // even padding (bootstrap sets col padding-left/-right as 15px)
   padding-top: 15px;
   padding-bottom: 15px;
   position: relative;
+  
+  // square background colors
+  &:first-child {
+    background-color: #fff;
+  }
+  // for mobile (2 columns)
+  &:nth-child(2), &:nth-child(3) {
+    background-color: $link-color;
+    
+    .hy-mosaic__link {
+      @extend %hy-link-inversed;
+    }
+  }
+  &:nth-child(4), &:nth-child(5) {
+    background-color: #000;
+    
+    .hy-mosaic__link {
+      @extend %hy-link-inversed;
+    }
+  }
+  // for tablet onwards (3 columns)
+  @media (min-width: $screen-sm-min) {
+    &:nth-child(2), &:nth-child(4) {
+      background-color: $link-color;
+      
+      .hy-mosaic__link {
+        @extend %hy-link-inversed;
+      }
+    }
+    &:nth-child(3), &:nth-child(5) {
+      background-color: #000;
+      
+      .hy-mosaic__link {
+        @extend %hy-link-inversed;
+      }
+    }
+  }
 }
 .hy-mosaic__ratio--square {
   padding-top: 100%; // 1:1 aspect ratio
@@ -238,24 +302,24 @@ $link-color-active-on-background: $link-color-hover-on-background;
   padding-right: 0.5em;
   text-align: left;
 }
-.hy-mosaic__item--white {
-  background-color: #fff;
-}
-
-.hy-mosaic__item--blue {
-  background-color: #0097cd;
-}
-
-.hy-mosaic__item--black {
-  @extend .hy-mosaic__item;
-  background-color: #000;
-}
-
-.hy-mosaic__item--blue, .hy-mosaic__item--black {
-  .hy-mosaic__link {
-    @extend %hy-link-inversed;
-  }
-}
+//.hy-mosaic__item--white {
+//  background-color: #fff;
+//}
+//
+//.hy-mosaic__item--blue {
+//  background-color: #0097cd;
+//}
+//
+//.hy-mosaic__item--black {
+//  @extend .hy-mosaic__item;
+//  background-color: #000;
+//}
+//
+//.hy-mosaic__item--blue, .hy-mosaic__item--black {
+//  .hy-mosaic__link {
+//    @extend %hy-link-inversed;
+//  }
+//}
 
 
 .hy-footer {

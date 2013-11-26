@@ -1,6 +1,7 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'compass/css3/images';
+@import 'compass/typography/links/link-colors';
 
 //compass-flexbox extension
 @import 'flexbox';
@@ -23,6 +24,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 // vars
 //
 
+// bootstrap brand-primary color override
+$brand-primary: #0097cd;
+
 $background-color: #222;
 
 $heading-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -42,7 +46,13 @@ $heading-article-size: 2.1rem;
 $heading-article-line-height: 2.3rem;
 
 $heading-item-size: 1.5rem;
-$heading-line-height: 1.6rem;
+$heading-item-line-height: 1.6rem;
+
+$ingress-font-family: $heading-font-family;
+$ingress-color: #808080;
+$ingress-size: 2.5rem;
+$ingress-line-height: 4rem;
+$ingress-letter-spacing: 0;
 
 $bodytext-font-family: Georgia, Times, "Times New Roman", serif;
 $bodytext-color: #606060;
@@ -52,13 +62,12 @@ $bodytext-letter-spacing: 0.01em;
 
 $bodytext-color-on-background: #fff;
 
-$link-color: #0097cd;
-$link-color-hover: $link-color;
-$link-color-active: $link-color;
+// bootstrap variables
+// $link-color
+// $link-hover-color
 
 $link-color-on-background: #fff;
-$link-color-hover-on-background: $link-color;
-$link-color-active-on-background: $link-color-hover-on-background;
+$link-color-hover-on-background: darken($link-color-on-background, 15%);
 
 
 //
@@ -81,23 +90,56 @@ $link-color-active-on-background: $link-color-hover-on-background;
 }
 
 
+.hy-ingress {
+  color: $ingress-color;
+  font-family: $ingress-font-family;
+  font-size: $ingress-size;
+  line-height: $ingress-line-height;
+  letter-spacing: $ingress-letter-spacing;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+
+.hy-bodytext {
+  color: $bodytext-color;
+  font-family: $bodytext-font-family;
+  font-size: $bodytext-size;
+  line-height: $bodytext-line-height;
+  letter-spacing: $bodytext-letter-spacing;
+  margin-bottom: 3rem;
+}
+.hy-bodytext > p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.hy-bodytext > p + p {
+  margin-top: 3rem;
+}
+
 %hy-bodytext-inversed {
+  @extend .hy-bodytext;
   color: $bodytext-color-on-background;
 }
 
 
 .hy-link {
-  color: $link-color;
+  @include link-colors($link-color, $link-hover-color, $link-hover-color);
 }
-%hy-link-inversed {
-  color: $link-color-on-background;
+.hy-link-inversed {
+  @include link-colors($link-color-on-background, $link-color-hover-on-background, $link-color-hover-on-background);
 }
 
 
+.hy-breadcrumb {
+  background-color: transparent;
+  margin-bottom: 0;
+}
 .hy-breadcrumb__item {
   @extend .hy-link;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.2rem;
+  font-weight: bold;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   
@@ -110,9 +152,9 @@ $link-color-active-on-background: $link-color-hover-on-background;
 
 %hy-heading {
   color: $heading-color;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: bold;
-  letter-spacing: -0.05em;
+  font-family: $heading-font-family;
+  font-weight: $heading-weight;
+  letter-spacing: $heading-letter-spacing;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -122,24 +164,31 @@ $link-color-active-on-background: $link-color-hover-on-background;
 
 .hy-heading__main {
   @extend %hy-heading;
-  font-size: 5rem;
-  line-height: 1em;
-  margin-bottom: 1em;
+  font-size: $heading-main-size;
+  line-height: $heading-main-line-height;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 .hy-heading__section {
   @extend %hy-heading;
-  font-size: 4rem;
-  line-height: 1em;
+  font-size: $heading-section-size;
+  line-height: $heading-section-line-height;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .hy-heading__article {
   @extend %hy-heading;
-  font-size: 2.1rem;
-  line-height: 2.3rem;
+  font-size: $heading-article-size;
+  line-height: $heading-article-line-height;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .hy-heading__item {
   @extend %hy-heading;
-  font-size: 1.5rem;
-  line-height: 1.6rem;
+  font-size: $heading-item-size;
+  line-height: $heading-item-line-height;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 
@@ -232,9 +281,9 @@ $link-color-active-on-background: $link-color-hover-on-background;
 
 .hy-mosaic__item {
   display: inline-block;
-  // even padding (bootstrap sets col padding-left/-right as 15px)
-  padding-top: 15px;
-  padding-bottom: 15px;
+  // even padding (bootstrap sets col padding-left/-right as 15px $grid-gutter-width / 2)
+  padding-top: $grid-gutter-width / 2;
+  padding-bottom: $grid-gutter-width / 2;
   position: relative;
   
   // square background colors
@@ -246,31 +295,23 @@ $link-color-active-on-background: $link-color-hover-on-background;
     background-color: $link-color;
     
     .hy-mosaic__link {
-      @extend %hy-link-inversed;
+      @extend .hy-link-inversed;
     }
   }
   &:nth-child(4), &:nth-child(5) {
     background-color: #000;
     
     .hy-mosaic__link {
-      @extend %hy-link-inversed;
+      @extend .hy-link-inversed;
     }
   }
   // for tablet onwards (3 columns)
   @media (min-width: $screen-sm-min) {
     &:nth-child(2), &:nth-child(4) {
       background-color: $link-color;
-      
-      .hy-mosaic__link {
-        @extend %hy-link-inversed;
-      }
     }
     &:nth-child(3), &:nth-child(5) {
       background-color: #000;
-      
-      .hy-mosaic__link {
-        @extend %hy-link-inversed;
-      }
     }
   }
 }
@@ -302,24 +343,6 @@ $link-color-active-on-background: $link-color-hover-on-background;
   padding-right: 0.5em;
   text-align: left;
 }
-//.hy-mosaic__item--white {
-//  background-color: #fff;
-//}
-//
-//.hy-mosaic__item--blue {
-//  background-color: #0097cd;
-//}
-//
-//.hy-mosaic__item--black {
-//  @extend .hy-mosaic__item;
-//  background-color: #000;
-//}
-//
-//.hy-mosaic__item--blue, .hy-mosaic__item--black {
-//  .hy-mosaic__link {
-//    @extend %hy-link-inversed;
-//  }
-//}
 
 
 .hy-footer {
@@ -329,6 +352,7 @@ $link-color-active-on-background: $link-color-hover-on-background;
 
 .hy-footer__contact {
   @extend %hy-bodytext-inversed;
+  font-family: $heading-font-family;
 }
 .hy-footer__contact__heading {
   text-transform: uppercase;

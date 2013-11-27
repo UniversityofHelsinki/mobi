@@ -23,9 +23,9 @@ Built with
 		2. install [node.js](http://nodejs.org) `brew install node`
 		3. install [npm](http://npmjs.org) `brew install npm`
 	2. install compass and compass-flexbox (with ruby gem)
-		1. update gems `gem update --system`
-		2. install [compass](http://compass-style.org) `gem install compass`
-		3. install [compass-flexbox](https://github.com/timhettler/compass-flexbox) `gem install compass-flexbox`
+		1. update gems `sudo gem update --system`
+		2. install [compass](http://compass-style.org) `sudo gem install compass`
+		3. install [compass-flexbox](https://github.com/timhettler/compass-flexbox) `sudo gem install compass-flexbox`
 		
 	3. install [yeoman](http://yeoman.io) which comes with [grunt](http://gruntjs.com) and [bower](http://bower.io) `npm install -g yo`
 3. Install project dependencies

@@ -101,14 +101,58 @@
         </div>
       </div>
       <div class="row">
-        <h2 class="col-xs-12 col-md-4 hy-heading__section">Mobiilin nykytila ja kehitystrendit</h2>
+        <h2 class="col-xs-12 col-md-4 hy-heading__section"> Mukautuva verkkosuunnittelu</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
-          <p>Mobiililaitteet yleistyvät ja verkkopalveluita käytetään entistä enemmän näillä päätelaitteilla. Mobiililaitteisiin kuuluun niin peruskännykät, älypuhelimet, tabletit, lukulaitteet, kuin uudemmat verkottuneet laitteet, kuten älytelevisiot ja autot. Käyttäjät odottavat käyttökokemuksen olevan yhtä hyvä/laadukas mobiililaitteilla kuin tietokoneella. Toisaalta palvelun käyttö mobiilipäätelaitteella voi erota merkittävästi palvelun käytöstä pöytäkoneelta.</p>
-          <p>TNS Gallup Mobile Life 2013 tutkimuksen mukaan 61% 16-60-vuotiaista suomalaisista omistaa älypuhelimen. Ylen (2013) teettämän tutkimuksen mukaan jo joka kolmas suomalainen internetin käyttäjä (32 %) käyttää nettiä puhelimella. Internetin käyttö matkapuhelimilla tulee ohittamaan PC:n vuonna 2013 (Lähde?).</p>
-          <p>Myös sovellusten käyttö lisääntyy. Applen App Storessa on tällä hetkellä saatavilla yli 900 000 eri sovellusta, Googlen Playssa jo yli miljoona. Suomalaisilla on keskimäärin 20 sovellusta puhelimessaan, joista 8 on ollut käytössä viimeisen kuukauden aikana (Google 2013).</p>
-          <p>Tablettien määrä kasvaa voimakkaasti. Vuoden 2013 alussa 16% 16-60-vuotiaista suomalaisista omisti tabletin. Vuoden 2013 ensimmäisellä puoliskolla Suomessa myytiin yli 220 000 tablettia (Kotek 2013).</p>
-          <p>Androidin osuus vuoden 2012 lopussa myydyistä laitteista oli maailmanlaajuisesti 75%, iOS:n 15%. iOS osuus verkkokaupausta, Internetin selailusta ja esim. digitaalisen sisällön kulutuksesta on kuitenkin suhteessa paljon suurempi. iOS käyttäjät ovat siis aktiivisempia palveluiden käyttäjiä ja valmiita käyttämään palveluihin enemmän rahaa.</p>
-          <p>Tällä hetkellä Helsingin Yliopiston verkkopalveluja käytetään pääosin pöytäkoneilla. Alle 10% käynneistä syksyllä 2013 tuli mobiilipäätelaitteilta. Valtaosa mobiilikäynneistä (78%) oli peräisin iOS laitteista.</p>
+      
+<p>Mukautuva verkkosuunnittelu (Responsive Web Design) mahdollistaa sivuston käyttökokemuksen optimoinnin eri päätelaitteilla ilman, että kullekin päätelaitteella tarvitsee luoda omaa HTML sivustoja. Mukautuvassa verkkosuunnittelussa sama HTML tarjotaan kaikille päätelaitteille ja CSS-mediakyselyn avulla ulkoasu räätälöidään laitteelle sopivaksi. Näin esimerkiksi saadaan kuvat, layout ja sisältö mukautuu laitteen näytölle sopivaksi. </p>
+<p>Responsiivinen verkkosuunnittelu tarjoaa useita hyötyjä:
+  <ul><li>
+Käyttäjien on helpompaa jakaa ja linkittää sivullasi olevaa sisältöä.
+<li>Käyttäjiä ei tarvitse ohjata uudelleen tietylle laitteelle optimoidulle sivulle, mikä nopeuttaa sivun latautumista.
+<li>Sivustolla voi hyödyntää yhtä sisältövarastoa. </ul>
+<p>Yksi tapa lähestyä mukautuvien verkkosivujen suunnittelua on ns. "mobile first" -lähestymistapa jossa aloitetaan suunnittelu mobiililaitteista ja laajennetaan toiminnallisuutta siirryttäessä pöytäkoneisiin. Tässä lähestymistavassa hyödynnetään ns. progressive enhancement-tekniikoita, joilla Javascriptiä hyödyntämällä voidaan lisätä palveluun asteittain eri laitteille sopivaa toiminnallisuutta. (vrt. graceful degradation, jossa aloitetaan pöytäkoneen kokemuksesta ja karsitaan toiminnallisuutta siirryttäessä mobiililaitteisiin). Sivun räätälöinti tapahtuu tässä vaihtoehdossa laitteessa. </p>  
+<p>
+Erinomaisen mukautuvan verkkosivuston käyttökokemuksen toteuttamiseksi on oltava laitekohtaiset strategiat, ja verkkosisältö on suunniteltava käyttäjäkeskeisesti. Responsiivisissa sivuissa lähtökohtana on että sama sisältö esitetään eri laitteille. Joskus tämä ei kuitenkaan ole sopivin lähestymistapa projektissa vaan on tarpeen miettiä mobiiliin aivan uudenlainen käyttökokemus, joka eroaa merkittävästi verkkopalvelusta. </p>
+<b>Kuinka tämä sivusto syntyi? </b>
+<ol>
+<li>Tämän sivuston toteutuksessa lähdettiin liikkeelle siitä, että tehdään responsiivinen verkkosivu, joka noudattaa Helsingin Yliopiston verkkosivujen uutta designia. Sisällön perusteella valittiin sopivat sivupohjat.</li> 
+<li>Toteutuksessa tehtiin ensin mobiilioptimoitu etusivu. Kehityksessä ei lähdetty rakentamaan sivua tyhjästä vaan hyödynnettiin olemassa olevia responsiivisten sivujen rakentamiseen tarkoitettuja frameworkkeja:</li> 
+<ul>
+  <li><a href="http://yeoman.io/index.html">Yeoman generator</a>: Kokoelma työkaluja ja hyväksi havaittuja toimintatapoja (best practices), joilla nopeutetaan verkkosovellusten rakentamista ja tehdään työstä mielekkäämpää. </li> 
+<li><a href="http://html5boilerplate.com">HTML5 boilerplate</a>: Verkkosivuston pohja, jossa valmiina mm. eri päätelaitteille sovitetut viewport- tagit ja tarvittavat Google Analytics koodit. </li>
+<li><a href="http://sass-lang.com">SASS Bootstrap</a></li> 
+<li><a href="http://getbootstrap.com">(Twitter) bootstrap</a>: Alunperin Twitterillä kehitetty ja myöhemmin open sourcetetty komponenttikirjasta verkkosivujen ja sovellusten rakentamiseen. Sisältää mm. grid layoutin, napit, lomakkeet, navigointielementit ja muut käyttöliittymäkomponentit.</li> 
+<li><a href="http://jquery.com">jQuery</a> (sisältyy HTML5 boilerplateen)</li> 
+<li><a href="http://modernizr.com">modernizr</a> (sisältyy HTML5 boilerplateen). Modernizrin avulla voidaan rakentaa vanhoilla selaimilla toimivia versioita sivustoista, jotka hyödyntävät uusinta verkkoteknologioita (HTML5 ja CSS3).</li> </ul>
+<li>Kun mobiilisivu oli valmis, tehtiin tablettiin tarvittavat korjaukset. Usein projekteissa päädytään aloittamaan desktop versioista, koska työn edistymistä seurataan tietokoneelta. Toiminnallisuuden karsiminen mobiiliversioon on tällöin kuitenkin hankalampaa. On helpompaa tehdä ensin mobiilisivu ja jatkaa siitä sitten muihin päätelaitteisiin. 3 päivää mobiiliin, ½ päivää tabletti ja desktop.
+<li>Koska vanhat selaimet eivät tue kaikkein uusinta toiminnallisuutta, vaatii näiden tukeminen kustomointia. Tällöin javascriptista ja modernizrista on apua.</li> 
+<li>Kun mobiilisivuston pohjalta toteutettu sivustoversiot toimivat kaikilla päätelaitteilla voidaan desktop-versioon lisätä lisätoiminnallisuutta (Progressive enhancement). </li> 
+</ol>
+</p>
+
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="col-xs-12 col-md-4 hy-heading__section">Mobiilisovellukset</h2>
+        <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
+      
+<p>
+Natiivisovellus on hyvä vaihtoehto vain tietyissä olosuhteissa. Natiivisovellukset ovat kalliimpia, vaikeampia jakaa ja hankalampia päivittää kuin mobiililaitteilla toimivat verkkosivut. Tyypillinen natiivisovellus voi maksaa jo satatuhatta euroa. Natiivisovelluksilla voidaan kuitenkin luoda erinomainen käyttökokemus.</p>
+<p>Natiivisovellusta kannattaa harkita, jos palvelusi:
+  <ul>
+<li>on peli</li>
+<li>vaatii paikannusta</li>
+<li>vaatii kameraa</li>
+<li>vaatii kiihdytysanturin käyttöä (esim. näytön suunnan tunnistukseen)</li>
+<li>vaatii pääsyä laitteen tiedostonhallintajärjestelmään (kuvat, osoitteet, sähköpostit…)</li>
+<li>vaatii offline käyttöä</li>
+<li>vaatii maksamista</li>
+</ul>
+<p>Muuten kannattaa tehdä web-sovellus. </p>
+<p>Natiivisovellusten osalta on mietittävä riittääkö sovelluksen toteutttaminen yhdelle alustavalla vai vaaditaanko tukea useammalle alustalle. Usein valitaan yksi alusta, jolle sovellus toteutetaan ensin ja vasta kun ollaan saatu palautetta käyttäjiltä tehdään versiot myös muille alustoille.</p>
+<p>Sovelluksien asentaminen on käyttäjältä investointi, näyttöala ja tallennustila on rajallinen resurssi. Keskinkertaisuutta hyväksytään helpommin verkossa, missä ei vaadita käyttäjien omia investointeja. Sovelluksissa vaatimus käyttäjäarvolle sekä laatuvaikutelmalle on kova. Webissä menee hieman kotikutoisempikin. 
+</p>
+
         </div>
       </div>
     </div>

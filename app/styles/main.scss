@@ -267,7 +267,9 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
 
 
 .hy-mosaic-background {
-  @include background-image(linear-gradient(left, #cff3fc, #5ce0ff));
+  @include background(image-url("../images/etusivukuva.png"));
+  background-repeat: no-repeat;
+  background-position: bottom left;
   padding-top: 3rem;
   padding-bottom: 5rem;
 }

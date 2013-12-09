@@ -97,35 +97,61 @@
       </div>
       <div class="row">
         <div class="col-xs-12 hy-ingress">
-          <p>Tämän ohjeistuksen tarkoitus on kuvata periaatteet mobiilipalveluiden toteutukselle Helsingin Yliopistolla. Ohjeistus on tarkoitettu järjestelmien omistajille heidän suunnitellessa uusia kehityshankkeita. Tämä ohjeistus ei pyri määrittelemään mitä mobiilissa pitäisi tehdä vaan tuomaan esille näkökulmia, joita olisi hyvä pitää mielessä kun mietitään palveluiden toteutusta eri kanavissa.</p>
+          <p>Mobiilikehityksen tärkeimmät termit lyhyesti selitettynä aakkosjärjestyksessä.</p>
         </div>
       </div>
       <div class="row">
         <h2 class="col-xs-12 col-md-4 hy-heading__section">Avaintermit</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
-      
-<b>Native app</b>
-<p>Laitteessa pyörivä sovellus, kuten sähköposti-client tai vaikkapa angry birds-peli. Eli appsi, joka ladataan jostain, kuten app storesta ja hyödyntää laitteen omaa rautaa ja laitteistoa, kuten kameraa ja mahdollistaa siis myös offline-käytön ja paikallisiin resursseihin (osoitekirjat, muisti) kajoamisen.
-http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
-<b> Web app</b>
-<p>Sovellus, jota käytetään verkosta esmes html5-toteutuksena (käytännössä usein html5 + javascript): "Regardless of your choice of native or non-native Web technologies, what makes a Web application a Web application is that it is deployed to, and accessed from, the World Wide Web platform. This means, at its simplest, that your website or application has a URL and is served via HTTP."
-http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
-<b>html5</b>
-<p>Html:n uusin versio, joka tukee uusina tageina mm. audio, canvas, video, ja nav. Uusina ominaisuuksina myös local storage sekä responsiivisuutta parantavia ominaisuuksia. Yleisimmin kuitenkin html5-termiä käytetään myös tarkoittamaan kombinaatiota html5+css3+javascript, jolla saadaan monipuolisia web-palveluita toteutettua.
-http://fi.wikipedia.org/wiki/HTML5
-http://www.w3schools.com/html/html5_intro.asp</p>
-<b>HTML5 app</b><br>
 
-<b>Responsive web design</b><br>
-Näkökohta verkkopalveluiden suunnitteluun, jossa verkkopalvelut pyritään rakentamaan niin, että päätelaitteista riippumatta käyttäjä saa hyvän käyttökokemuksen. Tämä saavutetaan media queryjen avulla (joilla nuuskitaan päätelaite ja näytön koko) ja skaalaamalla kuvia ja järjestelemällä muita elementtejä sivuilla (kuten navigaatiot, eri palikoiden sijainti sivuilla jne) sekä käyttämällä suhteellisia kokoja absoluuttisten sijaan (esmes leveysmäärityksissä prosentteja pikselien sijaan).
+
+<b>(HTML5) Boilerplate</b><br>
+<p>Verkkosivuston pohja, jolla pystyy nopeasti rakentamaan HTML5-pohjaisen sivuston. http://html5boilerplate.com</p>
+<b>(Twitter) Bootstrap</b><br>
+<p>Alunperin Twitterillä kehitetty komponenttikirjasta verkkosivujen ja sovellusten rakentamiseen, joka sisältää mm. napit, lomakkeet, navigointielementit ja muut käyttöliittymäkomponentit.</p>
+<b>Breakpoint</b><br>
+<p>Mukautuvassa verkkosuunnittelussa ne pisteet, joissa sivun muotoilu muuttuu. Breakpointteina voidaan käyttää eri laitteille tyypillisiä näytönleveyksiä (320px kännykälle, 768px tabletille, 1024px desktopille) tai ne voivat perustua sivun designiin ja sisältöön.</p> 
+<b>CSS3</b><br>
+<p>Uusin version CSS (Cascading style sheet) standardista. CSS:llä määritellään markup-kielillä (kuten HTML) kirjoitettujen dokumenttien ulkoasutyyli (ml.  värit, asemointi ja fontit). Sisällön ja ulkoasun erottelu mahdollista, että erilaisille sisältö näytetään erilailla eri laitteilla.</p>
+<b>Device detection</b><br>
+<p>Verkkosivulla vierailevan laitteen ja sen ominaisuuksien (näytön koko, selain ja selainversio, mediatuki, CSS, HTML ja JavaScript-tuki) tunnistaminen esim. HTTP headerissä olevan user agent tiedon pohjalta. Tunnistamisen perusteella voidaan tarjota laitteelle sopiva versio sivustosta. http://docs.webplatform.org/wiki/concepts/Detecting_device_and_browser</p>
+<b>Feature detection</b><br>
+<p> Katso device detection. Esimerkiksi HTML5 boilerplaten mukana tuleva Modernizr feature detection kirjasto tarkistaa käyttäjän selaimem HTML5 ja CSS3 tuen.</p>
+<b>Framework</b><br>
+<b>Graceful degradation</b><br>
+<p>Mukautuvassa verkkosuunnittelussa käytetty lähestymistapa, jossa aloitetaan suunnittelu ja toteutus päätelaitteesta, jossa on isoin näyttö, eniten toiminnallisuutta, jne. ja poistetaan toiminnallisuutta siirryttäessä muihin laitteisiin. Vertaa progressive enhancement, jossa edetään päinvastaisessa järjestyksessä.</p>
+<b>HTML5</b>
+<p>HTML:n uusin versio, joka tukee uusina tageina mm. audio, canvas, video, ja nav. Uusina ominaisuuksina myös local storage sekä responsiivisuutta parantavia ominaisuuksia. Yleisimmin kuitenkin html5-termiä käytetään myös tarkoittamaan kombinaatiota html5+css3+javascript, jolla saadaan monipuolisia web-palveluita toteutettua.
+http://fi.wikipedia.org/wiki/HTML5
+http://www.w3schools.com/html/html5_intro.asp
+
+Uutta toiminnallisuutta ilman monimutkaista JavaScriptia kuten form validation ja video.
+
+Is better suited to writing dynamic applications than previous HTML versions (HTML was originally designed for creating static documents).
+Has a clearly defined parsing algorithm so that all browsers implementing HTML5 will create the same DOM from the same markup, regardless of validity. This is a massive win for interoperability.
+
+</p>
+<b>HTML5 app</b><br>
+<b>Hybrid-sovellus</b><br>
+<b>Javascript</b><br>
+<b>Mediakysely</b><br>
+<b>Mobile first</b><br>
+<b>Mobiili</b><br>
+<b>Mukautuva verkkosuunnittelu</b><br>
+<p>Verkkopalveluiden suunnittelumenetelmä, jossa verkkopalvelut rakentamaan niin, että päätelaitteista riippumatta käyttäjä saa hyvän käyttökokemuksen. Tämä saavutetaan media queryjen avulla (joilla nuuskitaan päätelaite ja näytön koko) ja skaalaamalla kuvia ja järjestelemällä muita elementtejä sivuilla (kuten navigaatiot, eri palikoiden sijainti sivuilla jne) sekä käyttämällä suhteellisia kokoja absoluuttisten sijaan (esmes leveysmäärityksissä prosentteja pikselien sijaan).
 "Responsive Web design is the approach that suggests that design and development should respond to the user’s behavior and environment based on screen size, platform and orientation. The practice consists of a mix of flexible grids and layouts, images and an intelligent use of CSS media queries. As the user switches from their laptop to iPad, the website should automatically switch to accommodate for resolution, image size and scripting abilities. In other words, the website should have the technology to automaticallyrespond to the user’s preferences. This would eliminate the need for a different design and development phase for each new gadget on the market." lähde
 http://en.wikipedia.org/wiki/Responsive_web_design</p>
-<b>CSS3</b>
-<p>Uusin version CSS (Cascading style sheet) standardista. CSS:llä määritellään markup-kielillä kirjoitettujen dokumenttien ulkoasutyyli.
-"CSS is designed primarily to enable the separation of document content (written in HTML or a similar markup language) from document presentation, including elements such as the layout, colors, and fonts.[1] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple pages to share formatting, and reduce complexity and repetition in the structural content (such as by allowing for tableless web design). CSS can also allow the same markup page to be presented in different styles for different rendering methods, such as on-screen, in print, by voice (when read out by a speech-based browser or screen reader) and on Braille-based, tactile devices. It can also be used to allow the web page to display differently depending on the screen size or device on which it is being viewed. While the author of a document typically links that document to a CSS file, readers can use a different style sheet, perhaps one on their own computer, to override the one the author has specified."
-http://en.wikipedia.org/wiki/Cascading_Style_Sheets</p>
+<b>Natiivisovellus</b><br>
+<p>Laitteessa pyörivä sovellus, kuten sähköposti-client tai vaikkapa angry birds-peli. Eli appsi, joka ladataan jostain, kuten app storesta ja hyödyntää laitteen omaa rautaa ja laitteistoa, kuten kameraa ja mahdollistaa siis myös offline-käytön ja paikallisiin resursseihin (osoitekirjat, muisti) kajoamisen.
+http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
+<b>Progressive enhancement</b><br>
+
+<b> Web app</b><br>
+<p>Sovellus, jota käytetään verkosta html5-toteutuksena (käytännössä usein html5 + javascript): "Regardless of your choice of native or non-native Web technologies, what makes a Web application a Web application is that it is deployed to, and accessed from, the World Wide Web platform. This means, at its simplest, that your website or application has a URL and is served via HTTP."
+http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
+
 <b>Angular.js</b><br>
-<p>Angular.js on Javascript-framework (sovelluskehitysalusta), joka tuo selainpohjaisiin sovelluksiin model-view-controller -toiminnallisuutta.
+<p>Angular.js on Javascript-sovelluskehitysalusta, joka tuo selainpohjaisiin sovelluksiin model-view-controller -toiminnallisuutta.
 http://en.wikipedia.org/wiki/Model–view–controller</p>
 
 <b>Backbone</b><br>
@@ -138,9 +164,6 @@ http://en.wikipedia.org/wiki/Model–view–controller</p>
 <b>PhoneGap</b><br>
 <p>PhoneGap on sovelluskehitysalusta, jolla voidaan tehdä webbiteknologioita hyödyntymällä sovelluksia kaikille alustoille.
 http://phonegap.com/about/</p>
-
-<b>Breakpoint</b><br>
-<p>xyz<p>
 
         </div>
       </div>

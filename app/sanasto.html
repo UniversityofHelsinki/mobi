@@ -116,27 +116,28 @@
 <b>Device detection</b><br>
 <p>Verkkosivulla vierailevan laitteen ja sen ominaisuuksien (näytön koko, selain ja selainversio, mediatuki, CSS, HTML ja JavaScript-tuki) tunnistaminen esim. HTTP headerissä olevan user agent tiedon pohjalta. Tunnistamisen perusteella voidaan tarjota laitteelle sopiva versio sivustosta. http://docs.webplatform.org/wiki/concepts/Detecting_device_and_browser</p>
 <b>Feature detection</b><br>
-<p> Katso device detection. Esimerkiksi HTML5 boilerplaten mukana tuleva Modernizr feature detection kirjasto tarkistaa käyttäjän selaimem HTML5 ja CSS3 tuen.</p>
-<b>Framework</b><br>
+<p>Selaimen ominaisuuksien tunnistaminen ja käyttöliittymän räätälöinti selaimessa esim. javascriptillä. </p>
+<b>Framework</b>
+<p>Sovelluskehitysympäristö / puolivalmisterunko järjestelmän rakentamiseen. Kattaa jossain määrin myös komponenttikirjastot, templatet ja kehitystyökalut mutta ei esimerkiksi tuotteistettuja CMS-järjestelmiä.</p>
+<br>
 <b>Graceful degradation</b><br>
-<p>Mukautuvassa verkkosuunnittelussa käytetty lähestymistapa, jossa aloitetaan suunnittelu ja toteutus päätelaitteesta, jossa on isoin näyttö, eniten toiminnallisuutta, jne. ja poistetaan toiminnallisuutta siirryttäessä muihin laitteisiin. Vertaa progressive enhancement, jossa edetään päinvastaisessa järjestyksessä.</p>
+<p>Mukautuvassa verkkosuunnittelussa käytetty lähestymistapa, jossa aloitetaan suunnittelu ja toteutus päätelaitteesta, jossa on kaikki tarvittavat toiminnallisuudet ja poistetaan toiminnallisuutta siirryttäessä muihin laitteisiin. Vertaa progressive enhancement, jossa edetään päinvastaisessa järjestyksessä.</p>
 <b>HTML5</b>
-<p>HTML:n uusin versio, joka sopii edeltäjäänsä paremmin dynaamisten sovellusten rakentamiseen. HTML5:n avulla on mahdollista toteuttaa toiminnallisuutta kuten form validation ja video ilman monimutkaista JavaScriptia k.
- 
+<p>HTML:n nykyisin käytössä olevan version markkinointitermi sekä modernien verkkoteknologioiden yleisnimitys. Tällä viitataan usein mahdollisuuteen rakentaa myös ohjelmiston toimintaa näyttökerrokseen. 
 
-  joka tukee mm. seuraavia uusia tageja: audio, canvas, video, ja nav. Uusina ominaisuuksina myös local storage sekä responsiivisuutta parantavia ominaisuuksia. Yleisimmin kuitenkin html5-termiä käytetään myös tarkoittamaan kombinaatiota html5+css3+javascript, jolla saadaan monipuolisia web-palveluita toteutettua.
 http://fi.wikipedia.org/wiki/HTML5
-http://www.w3schools.com/html/html5_intro.asp
-
-
 
 </p>
-<b>HTML5 app</b><br>
-<b>Hybrid-sovellus</b><br>
-<b>Javascript</b><br>
-<b>Mediakysely</b><br>
-<b>Mobile first</b><br>
-<b>Mobiili</b><br>
+<b>HTML5 app</b>
+<p>Esimerkiksi sovellus, jonka toiminta on pääosin selaimessa erotuksena perinteisestä verkkosivusta, jossa html ja näkymät koostetaan palvelimella.<br>
+<b>Hybrid-sovellus</b>
+<p>Mobiilisovellus, jossa näkymät rakennetaan HTML5:llä ja joka paketoidaan natiivisovellukseksi laitteeseen asennettavaksi. Paketointi tehdään yleensä selainkomponenttia käyttäen tai puolivalmisteella kuten PhoneGap tai AppGyver.</p>
+<br>
+<b>Mediakysely</b>
+<p>Mediakysely, eli CSS Media Query, jolla CSS-tyylejä kohdistetaan päätelaitteen ominaisuuksien perusteella.</p><br>
+<b>Mobile first</b>
+Suunnittelumenetelmä, jossa suunnitellaan mobiilikäyttö ennen desktop-versiota.
+<p></p><br>
 <b>Mukautuva verkkosuunnittelu</b><br>
 <p>Verkkopalveluiden suunnittelumenetelmä, jossa verkkopalvelut rakentamaan niin, että päätelaitteista riippumatta käyttäjä saa hyvän käyttökokemuksen. Tämä saavutetaan media queryjen avulla (joilla nuuskitaan päätelaite ja näytön koko) ja skaalaamalla kuvia ja järjestelemällä muita elementtejä sivuilla (kuten navigaatiot, eri palikoiden sijainti sivuilla jne) sekä käyttämällä suhteellisia kokoja absoluuttisten sijaan (esmes leveysmäärityksissä prosentteja pikselien sijaan).
 "Responsive Web design is the approach that suggests that design and development should respond to the user’s behavior and environment based on screen size, platform and orientation. The practice consists of a mix of flexible grids and layouts, images and an intelligent use of CSS media queries. As the user switches from their laptop to iPad, the website should automatically switch to accommodate for resolution, image size and scripting abilities. In other words, the website should have the technology to automaticallyrespond to the user’s preferences. This would eliminate the need for a different design and development phase for each new gadget on the market." lähde
@@ -145,25 +146,11 @@ http://en.wikipedia.org/wiki/Responsive_web_design</p>
 <p>Laitteessa pyörivä sovellus, kuten sähköposti-client tai vaikkapa angry birds-peli. Eli appsi, joka ladataan jostain, kuten app storesta ja hyödyntää laitteen omaa rautaa ja laitteistoa, kuten kameraa ja mahdollistaa siis myös offline-käytön ja paikallisiin resursseihin (osoitekirjat, muisti) kajoamisen.
 http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
 <b>Progressive enhancement</b><br>
-
+<p>Strategia, jossa sovelluksen toimitoja lisätään päätelaitteen ominaisuustuen näin mahdollistaessa. Mahdollistaa sen, että palvelu on käytettävissä ihan kaikilla laitteilla, mutta edistyneemät laitteet saavat ihanamman käyttökokemuksen ja rikkaamman ominaisuussetin.
 <b> Web app</b><br>
 <p>Sovellus, jota käytetään verkosta html5-toteutuksena (käytännössä usein html5 + javascript): "Regardless of your choice of native or non-native Web technologies, what makes a Web application a Web application is that it is deployed to, and accessed from, the World Wide Web platform. This means, at its simplest, that your website or application has a URL and is served via HTTP."
 http://mobilewebbestpractices.com/strategy/dont-confuse-native-and-web/</p>
 
-<b>Angular.js</b><br>
-<p>Angular.js on Javascript-sovelluskehitysalusta, joka tuo selainpohjaisiin sovelluksiin model-view-controller -toiminnallisuutta.
-http://en.wikipedia.org/wiki/Model–view–controller</p>
-
-<b>Backbone</b><br>
-<p>Backbone on MVP-arkkitehtuuriin pohjautuva Javascript-kirjasto yhden-sivun verkkosovellusten rakentamiseen.
-http://backbonejs.org<p>
-
-<b>MVC</b>
-<p>Model-view-controller on arkkitehtuurimalli, jossa erotetaan tiedon esittäminen käyttäjän interaktiosta.
-http://en.wikipedia.org/wiki/Model–view–controller</p>
-<b>PhoneGap</b><br>
-<p>PhoneGap on sovelluskehitysalusta, jolla voidaan tehdä webbiteknologioita hyödyntymällä sovelluksia kaikille alustoille.
-http://phonegap.com/about/</p>
 
         </div>
       </div>

@@ -98,7 +98,7 @@
       <div class="row">
         <div class="col-xs-12 hy-ingress">
           <p>
-            Monet tekstipainotteiset verkkopalvelut toimivat melko hyvin sellaisenaan myös uusimmilla mobiililaitteilla.  </p>
+            Monet tekstipainotteiset verkkopalvelut toimivat melko hyvin sellaisenaan myös uusimmilla mobiililaitteilla. Usein ei tarvita massiivisia investointeja. Kaikki palvelut on kuitenkin tarpeen tarkistaa käytetyimmillä mobiililaitteilla (Suomessa iOS, Windows Phone, Android).</p>
         </div>
       </div>
       <div class="row">
@@ -108,8 +108,7 @@
 <li>Onko sivustollasi virheellisesti näkyviä kuvia tai puuttuuko sisältöä?
 <li>Pystyykö tekstin lukemaan ilman zoomaamista tai vierittämistä?
 <li>Voiko linkkejä ja painikkeita klikata peukalolla?
-<li>Onko hakukenttä selvästi näkyvillä?
-<li>Toimivatko videot, pelit ja muut animaatiot oikein?
+<li>Toimivatko videot, pelit ja animaatiot oikein?
 <li>Onko sivustolla liikkuminen helppoa ja selkeää?
 </ul>
 <p>Testausta varten kannattaa määritellä joukko laitteita, joita vasten testataan:
@@ -125,10 +124,12 @@
         <h2 class="col-xs-12 col-md-4 hy-heading__section">Tee ainakin nämä</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
           <p> <ol>
+
+<li>Yritä päästä eroon taulukkotaitosta.</li>
+<li>Tarjoa Flash-komponenttien sijaan standardinmukaista sisältöä.</li>
 <li> Varmista, että Viewport-asetukset on kunnossa: </li>
 meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
-<li>Aseta media selector kohdilleen: @media only screen and (max-width: 700px)</li>
-<li>Box model: box-sizing:border-box;</li>
+<li>Aseta media query kohdilleen ja tee tarvittavat pienen ruudun optimoinnit: @media only screen and (max-width: 700px)</li>
 
 </ol>
           </p>
@@ -138,7 +139,14 @@ meta name="viewport" content="width=device-width, initial-scale=1, user-scalable
         <h2 class="col-xs-12 col-md-4 hy-heading__section">Erillinen mobiilisivu</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
           <p> 
-Mobiililaitteiden käyttöön voidaan luoda myös erillinen versio verkkosivustosta. Verkkopalvelimesi voi tunnistaa käyttäjän laitetyypin ja näyttää räätälöidyn sivun (HTML+CSS) samassa URL-osoitteessa (ns. device detection) tai ohjata käyttäjän sivuston mobiililaiteoptimoituun versioon (<a href="http://m.nytimes.com/">m.nytimes.com</a>). Erillisen mobiilisivuston avulla voit luoda mobiilikäyttäjille räätälöidyn sivuston. Erillisen mobiilisivuston tekeminen voi olla järkevää, jos pääsivustoa ei ole mielekästä kehittää responsiiviseksi (esim. mobiilit käyttötapaukset eroavat merkittävästi verkkosivoston käyttötapauksista). Erillisen mobiiliversion ylläpitäminen on kuitenkin työlästä ja kallista. Käyttäjän laitteen tunnistaminen ja tarjottavan sisällön muuttaminen edellyttää jonkin verran muokattavaa sisältöä (esim. tyylilomakkeita), jotka on ylläpidettävä laitekohtaisesti. Sivun räätälöinti tapahtuu tässä vaihtoehdossa serverillä. Tämä vaihtoehto on käytössä lähes kaikilla suurilla verkkosivustoilla (Google, Facebook, Amazon, jne.). Device detection -tietokannat ovat kaupallisia tuotteita. 
+Mobiililaitteiden käyttöön voidaan luoda myös erillinen versio verkkosivustosta. Näin tehdään, kun olemassaolevia palveluita halutaan laajentaa mobiiliin. Tämä vaatii päätelaitetunnistuksen joko sivustolle tai palvelimelle. Esimerkkejä tästä lähestymistavasta ovat esimerkiksi <a href="http://m.iltasanomat.fi">m.iltasanomat.fi</a> tai <a href="http://m.nytimes.com">m.nytimes.com</a>.
+</p><p>
+Erillisen mobiilisivuston tekeminen voi olla järkevää, jos pääsivustoa ei ole mielekästä kehittää responsiiviseksi (esim. mobiilit käyttötapaukset eroavat merkittävästi verkkosivoston käyttötapauksista tai kolmannen osapuolen järjestelmä ei mahdollista kustannustehokasta räätälöintiä). Huomioi kuitenkin mahdolliset ylläpito- ja jatkokehityskustannukset, joita yksi lisäjärjestelmä tuo mukanaan.
+
+<!--
+
+Verkkopalvelimesi voi tunnistaa käyttäjän laitetyypin ja näyttää räätälöidyn sivun (HTML+CSS) samassa URL-osoitteessa (ns. device detection) tai ohjata käyttäjän sivuston mobiililaiteoptimoituun versioon (<a href="http://m.nytimes.com/">m.nytimes.com</a>). Erillisen mobiilisivuston avulla voit luoda mobiilikäyttäjille räätälöidyn sivuston. Erillisen mobiilisivuston tekeminen voi olla järkevää, jos pääsivustoa ei ole mielekästä kehittää responsiiviseksi (esim. mobiilit käyttötapaukset eroavat merkittävästi verkkosivoston käyttötapauksista tai kolmannen osapuolen järjestelmä ei mahdollista kustannustehokasta räätälöintiä). Erillisen mobiiliversion ylläpitäminen on kuitenkin työlästä ja kallista. Käyttäjän laitteen tunnistaminen ja tarjottavan sisällön muuttaminen edellyttää jonkin verran muokattavaa sisältöä (esim. tyylilomakkeita), jotka on ylläpidettävä laitekohtaisesti. Sivun räätälöinti tapahtuu tässä vaihtoehdossa serverillä. Tämä vaihtoehto on käytössä lähes kaikilla suurilla verkkosivustoilla (Google, Facebook, Amazon, jne.). Device detection -tietokannat ovat kaupallisia tuotteita. 
+ -->
           </p>
         </div>
       </div>

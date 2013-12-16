@@ -97,34 +97,35 @@
       </div>
       <div class="row">
         <div class="col-xs-12 hy-ingress">
-          <p>Uusien palvelujen osalta mieti ensin voitko toteuttaa palvelusi responsiivisena verkkosivustoja vai hyödyntääkö palvelusi ominaisuuksia joiden toteuttaminen on mahdollista vain natiivisovelluksella esim. tallentaminen, offline-käyttö, GPS, ja kamera ovat sellaisia. </p>
+          <p>Puhtaalta pöydältä rakennettavat uudet palvelut tulee tehdä responsiiviseksi siten, että ne tukevat myös mobiilikäyttöä alusta asti. Joskus voi olla tarpeen rakentaa natiivisovellus, mutta tätä vaihtoehtoa tulee tarkastella erityisen kriittisesti. 
+        </p>
         </div>
       </div>
       <div class="row">
-        <h2 class="col-xs-12 col-md-4 hy-heading__section"> Mukautuva verkkosuunnittelu</h2>
+        <h2 class="col-xs-12 col-md-4 hy-heading__section"> Mukautuva verkko&shy;suun&shy;nit&shy;telu</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
       
-<p>Mukautuva verkkosuunnittelu (Responsive Web Design) mahdollistaa sivuston käyttökokemuksen optimoinnin eri päätelaitteilla ilman, että kullekin päätelaitteella tarvitsee luoda omaa HTML-sivustoja. Mukautuvassa verkkosuunnittelussa sama HTML tarjotaan kaikille päätelaitteille ja CSS-mediakyselyn avulla ulkoasu räätälöidään laitteelle sopivaksi. Näin esimerkiksi saadaan kuvat, layout ja sisältö mukautuu laitteen näytölle sopivaksi. </p>
+<p>Mukautuva verkkosuunnittelu (Responsive Web Design) mahdollistaa sivuston käyttökokemuksen optimoinnin eri päätelaitteille ilman, että kullekin laiteryhmälle tarvitsee luoda omaa HTML-sivustoa. Mukautuvassa verkkosuunnittelussa sama HTML tarjotaan kaikille päätelaitteille ja esimerkiksi CSS-mediakyselyn avulla ulkoasu räätälöidään laitteelle sopivaksi. Näin saadaan kuvat, layout ja sisältö mukautumaan laitteen näytölle sopivaksi. </p>
 <p>Responsiivinen verkkosuunnittelu tarjoaa useita hyötyjä:
   <ul><li>
 Käyttäjien on helpompaa jakaa ja linkittää sivullasi olevaa sisältöä.
 <li>Käyttäjiä ei tarvitse ohjata uudelleen tietylle laitteelle optimoidulle sivulle, mikä nopeuttaa sivun latautumista.
 <li>Sivustolla voi hyödyntää yhtä sisältövarastoa. </ul>
-<p>Yksi tapa lähestyä mukautuvien verkkosivujen suunnittelua on ns. "mobile first" -lähestymistapa jossa aloitetaan suunnittelu mobiililaitteista ja laajennetaan toiminnallisuutta siirryttäessä pöytäkoneisiin. Tässä lähestymistavassa hyödynnetään ns. progressive enhancement-tekniikoita, joilla palveluun lisätään asteittain eri laitteille sopivaa toiminnallisuutta Javasriptin avulla (vrt. graceful degradation, jossa aloitetaan pöytäkoneen kokemuksesta ja karsitaan toiminnallisuutta siirryttäessä mobiililaitteisiin). Sivun räätälöinti tapahtuu tässä vaihtoehdossa laitteessa. Erinomaisen mukautuvan verkkosivuston käyttökokemuksen toteuttamiseksi on oltava laitekohtaiset strategiat, ja verkkosisältö on suunniteltava käyttäjäkeskeisesti.  </p>  
+<p>Yksi tapa suunnitella mukautuvia verkkosivuja on ns. "mobile first" -lähestymistapa jossa aloitetaan suunnittelu mobiililaitteista ja laajennetaan toiminnallisuutta siirryttäessä pöytäkoneisiin. Palveluun lisätään asteittain eri laitteille sopivaa toiminnallisuutta esimerkiksi javascriptin avulla. Tätä kutsutaan usein termillä "progressive enhancement" (vrt. "graceful degradation", jossa aloitetaan pöytäkoneen kokemuksesta ja karsitaan toiminnallisuutta siirryttäessä mobiililaitteisiin). Sivun räätälöinti tapahtuu selaimessa itsessään. Erinomaisen mukautuvan verkkosivuston käyttökokemuksen toteuttamiseksi on oltava laitekohtaiset strategiat, ja verkkosisältö on suunniteltava käyttäjäkeskeisesti.  </p>  
 <p>
  </p>
 <b>Kuinka tämä sivusto syntyi? </b>
 <ol>
-<li>Tämän sivuston toteutuksessa lähdettiin liikkeelle siitä, että tehdään responsiivinen verkkosivu, joka noudattaa Helsingin Yliopiston verkkosivujen uutta designia. Sisällön perusteella valittiin sopivat sivupohjat.</li> 
+<li>Tämän sivuston toteutettiin responsiivisena sivuna Helsingin Yliopiston uuden verkkosivudesignin mukaisesti.</li> 
 <li>Toteutuksessa tehtiin ensin mobiilioptimoitu etusivu. Kehityksessä ei lähdetty rakentamaan sivua tyhjästä vaan hyödynnettiin olemassa olevia responsiivisten sivujen rakentamiseen tarkoitettuja frameworkkeja:</li> 
 <ul>
   <li><a href="http://yeoman.io/index.html">Yeoman generator</a>: Kokoelma työkaluja ja hyväksi havaittuja toimintatapoja (best practices), joilla nopeutetaan verkkosovellusten rakentamista ja tehdään työstä mielekkäämpää. </li> 
-<li><a href="http://html5boilerplate.com">HTML5 boilerplate</a>: Verkkosivuston pohja, jossa valmiina mm. eri päätelaitteille sovitetut viewport- tagit ja tarvittavat Google Analytics koodit. </li>
-<li><a href="http://getbootstrap.com">(Twitter) bootstrap</a>: Alunperin Twitterillä kehitetty ja myöhemmin open sourcetetty komponenttikirjasta verkkosivujen ja sovellusten rakentamiseen. Sisältää mm. grid layoutin, napit, lomakkeet, navigointielementit ja muut käyttöliittymäkomponentit.</li> 
+<li><a href="http://html5boilerplate.com">HTML5 boilerplate</a>: Verkkosivuston pohja, jossa valmiina mm. eri päätelaitteille sovitetut viewport- tagit ja tarvittavat Google Analytics -tagit. </li>
+<li><a href="http://getbootstrap.com">(Twitter) bootstrap</a>: Alunperin Twitterillä kehitetty ja myöhemmin open sourceksi siirretty komponenttikirjasta verkkosivujen ja sovellusten rakentamiseen. Sisältää mm. grid layoutin, napit, lomakkeet, navigointielementit ja muut käyttöliittymäkomponentit.</li> 
 <li><a href="http://jquery.com">jQuery</a> (sisältyy HTML5 boilerplateen)</li> 
 <li><a href="http://modernizr.com">modernizr</a> (sisältyy HTML5 boilerplateen). Modernizrin avulla voidaan rakentaa vanhoilla selaimilla toimivia versioita sivustoista, jotka hyödyntävät uusinta verkkoteknologioita (HTML5 ja CSS3).</li> </ul>
-<li>Kun mobiilisivu oli valmis, tehtiin tablettiin tarvittavat korjaukset. Usein projekteissa päädytään aloittamaan desktop versioista, koska työn edistymistä seurataan tietokoneelta. Toiminnallisuuden karsiminen mobiiliversioon on tällöin kuitenkin hankalampaa. On helpompaa tehdä ensin mobiilisivu ja jatkaa siitä sitten muihin päätelaitteisiin. 
-<li>Koska vanhat selaimet eivät tue kaikkein uusinta toiminnallisuutta, vaatii näiden tukeminen kustomointia. Tällöin javascriptista ja modernizrista on apua.</li> 
+<li>Kun mobiilisivu oli valmis, tehtiin tablettiin tarvittavat korjaukset. Usein projektit aloitetaan pöytäkoneversioista, koska työtä tehdään ja sen edistymistä seurataan tietokoneelta. Toiminnallisuuden karsiminen mobiiliversioon on tällöin kuitenkin hankalampaa. On helpompaa tehdä ensin mobiilisivu ja jatkaa siitä muihin päätelaitteisiin. 
+<li>Koska vanhat selaimet eivät tue kaikkein uusinta toiminnallisuutta, vaatii näiden tukeminen räätälöintiä. Tällöin javascriptista ja modernizrista on apua.</li> 
 <li>Kun mobiilisivuston pohjalta toteutettu sivustoversiot toimivat kaikilla päätelaitteilla voidaan desktop-versioon lisätä lisätoiminnallisuutta (Progressive enhancement). </li> 
 </ol>
 </p>
@@ -136,7 +137,7 @@ Käyttäjien on helpompaa jakaa ja linkittää sivullasi olevaa sisältöä.
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
       
 <p>
-Joskus on tarpeen miettiä mobiiliin aivan uudenlainen käyttökokemus, joka eroaa merkittävästi verkkopalvelusta. Natiivisovellus on hyvä vaihtoehto vain tietyissä olosuhteissa. Natiivisovellukset ovat kalliimpia, vaikeampia jakaa ja hankalampia päivittää kuin mobiililaitteilla toimivat verkkosivut. Tyypillinen natiivisovellus voi maksaa jo satatuhatta euroa. Natiivisovelluksilla voidaan kuitenkin luoda erinomainen käyttökokemus.</p>
+Joskus on tarpeen miettiä mobiiliin aivan uudenlainen käyttökokemus, joka eroaa merkittävästi verkkopalvelusta. Natiivisovellus on hyvä vaihtoehto vain tietyissä olosuhteissa. Natiivisovellukset ovat kalliimpia, vaikeampia jakaa ja hankalampia päivittää kuin mobiililaitteilla toimivat verkkosivut. Natiivisovelluksen toteuttaminen Suomen merkittäville alustoille (1. Windows Phone, 2. iOS, 3. Android) maksaa kymmeniä tuhansia euroja. Natiivisovelluksilla voidaan kuitenkin luoda erinomainen käyttökokemus.</p>
 <p>Natiivisovellusta kannattaa harkita, jos palvelusi:
   <ul>
 <li>on peli</li>
@@ -147,9 +148,9 @@ Joskus on tarpeen miettiä mobiiliin aivan uudenlainen käyttökokemus, joka ero
 <li>vaatii offline käyttöä, tai</li>
 <li>vaatii maksamista.</li>
 </ul>
-<p>Muuten kannattaa tehdä web-sovellus. </p>
-<p>Natiivisovellusten osalta on mietittävä riittääkö sovelluksen toteutttaminen yhdelle alustavalla vai vaaditaanko tukea useammalle alustalle. Usein valitaan yksi alusta, jolle sovellus toteutetaan ensin ja vasta kun ollaan saatu palautetta käyttäjiltä tehdään versiot myös muille alustoille.</p>
-<p>Sovelluksien asentaminen on käyttäjältä investointi, näyttöala ja tallennustila on rajallinen resurssi. Keskinkertaisuutta hyväksytään helpommin verkossa, missä ei vaadita käyttäjien omia investointeja. Sovelluksissa vaatimus käyttäjäarvolle sekä laatuvaikutelmalle on kova. Webissä menee hieman kotikutoisempikin. 
+<p>Muuten kannattaa useimmiten tehdä responsiivinen verkkosivusto. </p>
+<p>Natiivisovellusten osalta on mietittävä riittääkö sovelluksen toteutttaminen yhdelle alustalle vai vaaditaanko tukea useammalle alustalle. Usein valitaan yksi alusta, jolle sovellus toteutetaan ensin ja vasta kun ollaan saatu palautetta käyttäjiltä tehdään versiot myös muille alustoille.</p>
+<p>Sovelluksien asentaminen on käyttäjältä investointi, käyttäjän näyttöala ja tallennustila on rajallinen resurssi. Keskinkertaisuutta hyväksytään helpommin verkossa, missä ei vaadita käyttäjien omia investointeja. Sovelluksissa vaatimus  laatuvaikutelmalle on kova kun taas webissä menee hieman kotikutoisempikin. 
 </p>
 
         </div>

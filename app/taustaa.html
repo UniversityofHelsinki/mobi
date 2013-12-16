@@ -97,22 +97,22 @@
       </div>
       <div class="row">
         <div class="col-xs-12 hy-ingress">
-          <p>Tämän ohjeistuksen tarkoitus on kuvata periaatteet mobiilipalveluiden toteutukselle Helsingin Yliopistolla. Ohjeistus on tarkoitettu järjestelmien omistajille heidän suunnitellessa uusia kehityshankkeita. Ohjeistus ei pyri määrittelemään mitä mobiilissa pitäisi tehdä vaan tuomaan esille näkökulmia, joita olisi hyvä pitää mielessä kun mietitään palveluiden toteutusta.</p>
+          <p>Helsingin yliopiston käyttäjistä vasta vain n. 10% käyttää verkkopalveluita mobiiliselaimilla. Mobiilikäyttäjämäärät kasvavat tulevaisuudessa, mutta kasvu vaatii myös palveluilta entistä parempaa tukea eri päätelaitteille; puhelimille, tableteille, älykelloille, smart-TV:lle jne. Kuinka palveluiden suunnittelussa tulisi huomioida mobiili- ja tabletkäyttö? 
+</p>
         </div>
       </div>
       <div class="row">
         <h2 class="col-xs-12 col-md-4 hy-heading__section">Aloita käyttäjän tarpeista ja kontekstista</h2>
         <div class="col-xs-12 col-md-7 col-md-offset-1 hy-bodytext">
 <p>
-Mobiilipalveluiden suunnittelussa lähtökohtana tulisi olla käyttäjän tarpeet ja tavoitteet sekä käyttökonteksti. Suunnittelussa on hyvä lähteä liikkeellä siitä kuka käyttäjäsi on, minkälaisia hyötyjä käyttäjälle tarjotaan ja millaista käyttökokemusta tavoitellaan.<p>
-<p>Määrittele siis aluksi, kuka käyttäjäsi on ja listaa minkälaisia heidän tarpeensa ovat suhteessa palveluusi.</p>
+Mobiilipalveluiden suunnittelussa lähtökohtana tulisi olla käyttäjän tarpeet ja tavoitteet sekä käyttökonteksti. Suunnittelussa on hyvä lähteä liikkeelle siitä, kuka käyttäjäsi on, minkälaisia hyötyjä käyttäjälle tarjotaan ja millaista käyttökokemusta tavoitellaan.<p>
+<p class="actionpoint">Määrittele, kuka käyttäjäsi on ja listaa minkälaisia heidän tarpeensa ovat suhteessa palveluusi.</p>
 <p>Käyttäjän saama arvo on hyvin kontekstisidonnaista. Kontekstilla tarkoitetaan:
 <ul><li>Käyttäjän fyysistä ympäristöä (onko hän kotona, bussissa, autossa, luentosalissa, ruokalassa, jne.)</li>
 <li>Käyttäjän käyttämiä laitteita ja niiden ominaisuuksia (näytön koko, tekstin syötön helppous, jne.) sekä</li>
 <li>Käyttäjän mielentilaa (tarpeet, motivaatio…)</li></ul>
-<p>Esimerkiksi kun kännykkäsovellusta käytetään liikkeellä, käyttäjä hakee usein tiettyyn paikkaan ja aikaan liittyvää tietoa esim. julkisen liikenteen aikataulu- ja reittitietoja matkan varrella. Hän ei pysty täysin keskittymään mobiililaitteen käyttöön vaan käyttää yhtä kättä, katsoo ruutua vain ohimennen ja keskittyy tiedon hakemiseen vain puolittain. Käyttäjälle tarjottua sisältöä voidaan räätälöidä sen mukaan missä hän on, miten ja mitä laitetta hän käyttää. 
-  <p>
-Mieti missä tilanteessa käyttäjä käyttää palveluasi ja minkälainen hänen ympäristönsä, käyttämä laitteensa ja mielentilansa silloin on. Voit kiteyttää palvelusi idean yhteen lauseeseen muodossa: Olemme suunnittelemassa ...palvelua, joka... käyttäjälle..., jotta... </p>
+<p>Esimerkiksi kun kännykkäsovellusta käytetään liikkeellä, käyttäjä hakee usein tiettyyn paikkaan ja aikaan liittyvää tietoa esim. julkisen liikenteen aikataulu- ja reittitietoja matkan varrella. Hän ei pysty täysin keskittymään mobiililaitteen käyttöön vaan käyttää yhtä kättä, katsoo ruutua vain ohimennen ja keskittyy tiedon hakemiseen vain puolittain. Käyttäjälle tarjottua sisältöä voidaan räätälöidä sen mukaan missä hän on, miten ja mitä laitetta hän käyttää. Älä kuitenkaan lukkiudu kuviteltuun käyttökontekstiin vaan muista, että mobiilia käytetään myös hyvin keskittyneesti ja tavoitteellisesti.</p>
+<p class="actionpoint"> Selvitä omat käyttäjäsi, älä oleta liikaa. Mieti missä tilanteessa käyttäjäsi käyttää palveluasi ja minkälainen hänen ympäristönsä, laitteensa, tavoitteensa ja mielentilansa silloin on.<!-- Voit kiteyttää palvelusi idean yhteen lauseeseen muodossa: Olemme suunnittelemassa ...palvelua, joka... käyttäjälle..., jotta...--> </p>
 
         </div>
       </div>
@@ -126,14 +126,15 @@ Mieti missä tilanteessa käyttäjä käyttää palveluasi ja minkälainen häne
   <li>Ovat henkilökohtaisia
 <li>Liikkuvat mukana
 <li>Ovat lähes aina päällä ja
-<li>Sisältävät toiminnallisuutta, kuten paikannus, puhelin, kamera ja kosketusnäyttö, joita pöytäkoneissa tyypillisesti ei ole ollut. </ul></p>
-<p>Laitteen ominaisuuksia voi hyödyntää esimerkiksi seuraavasti:
+<li>Sisältävät toiminnallisuutta, kuten paikannus, puhelin, kamera ja kosketusnäyttö, joita pöytäkoneissa tai esimerkiksi painetuissa esitteissä tyypillisesti ei ole ollut. </ul></p>
+<p class="actionpoint">Mieti siis, miten palvelusi voisi hyötyä mobiililaitteiden erityispiirteistä.</p>
+<!--p>Laitteen ominaisuuksia voi hyödyntää esimerkiksi seuraavasti:
 <ul>
-<li>Käyttämällä tel-hyperlinkitystä puhelun käynnistämiseen klikkaamalla sivulla näkyvää puhelinnumeroa
+<li>Käyttämällä tel-hyperlinkitystä puhelun käynnistämiseen klikkaamalla sivulla näkyvää puhelinnumeroa: <a href="tel:+35891911">(09) 1911 (vaihde)</a>
 <li>Käyttämällä GPS-tietoa hyväksi paikan valinnassa ja esim. palvelun sisällön räätälöinnissä kontekstiin sopivaksi
 <li>Käyttämällä hyväksi laitteen kosketusnäyttöä ja sen mahdollistamaa vuorovaikutusta
 <li>Mieti siis, miten palvelusi voisi hyötyä mobiililaitteiden erityispiirteistä.
-</ul></p>
+</ul></p-->
 
         </div>
       </div>
@@ -147,8 +148,9 @@ Kaikkia verkkosivun toiminnallisuutta ei ole tarpeen kopioida sellaisenaan mobii
 <li>Could have</li>
 <li>Won’t have</li></ul>
 <p>Näistä must have - toiminnallisuus kannattaa nostaa esille mobiilissa. Poista, piilota tai ryhmittele vähemmän tärkeää toiminnallisuutta. Esimerkiksi Yliopistoliikunnan mobiilioptimoidun sivuston etusivulla pystyy vain selaamaan ohjattujen tuntien aikataulua, katsomaan liikuntapaikkojen aukioloaikoja ja kirjautumaan sisään, kun verkkosivulla taas on huomattavasti enemmän toiminnallisuutta.</p>
-<p>Olennaiseen keskittyminen tarkoittaa myös sitä, että käyttäjälle tarjotaan vähän vaihtoehtoja yhden asian tekemiseen. Yleensä ei kannata esimerkiksi kahdentaa sivulla selaimen toiminnallisuuksia, kunte share on Facebook, Twitter, back / forward etc.</p>
+<p>Olennaiseen keskittyminen tarkoittaa myös sitä, että käyttäjälle tarjotaan vähän vaihtoehtoja yhden asian tekemiseen. Yleensä ei kannata esimerkiksi kahdentaa sivulla selaimen toiminnallisuuksia, kuten Facebook-jakaminen, twiittaus, taakse- ja eteenpäin navigointi jne.</p>
 
+<p class="actionpoint">Pohdi, tarvitaanko koko palvelun sisältöä kaikissa kanavissa vai riittäisikö esimerkiksi mobiiliin hieman kevyempi toteutus.</p>
 
 
         </div>
@@ -160,7 +162,7 @@ Kaikkia verkkosivun toiminnallisuutta ei ole tarpeen kopioida sellaisenaan mobii
 <p>
 Mobiilipalveluja kannattaa miettiä osana laajempaa digitaalista palvelutarjontaa. Käyttäjät asioivat luultavasti palvelusi kanssa useassa eri kanavassa, jolloin kokemuksen pitäisi olla pääpiirteissään yhtenäinen kaikissa näissä kanavissa. Mieti siis, miten mobiilisovelluksesi suhtautuu verkkosivustoosi, esillä oloosi sosiaalisissa medioissa jne.</p>
 <p>
-Huomaa kuitenkin erityisesti sovelluksia miettiessäsi, että eri alustojen käyttöliittymätyylit eroavat toisistaan. Sovelluksen tulisi olla yhteinäinen alustan käyttökonventioiden kanssa sen sijaan, että eri alustoille tehdyt sovellukset olisivat keskenään täysin identtisiä. </p>
+Huomaa kuitenkin erityisesti sovelluksia miettiessäsi, että eri alustojen käyttöliittymätyylit eroavat toisistaan. Sovelluksen tulisi olla yhtenäinen alustan käyttökonventioiden kanssa sen sijaan, että eri alustoille tehdyt sovellukset olisivat keskenään täysin identtisiä. </p>
 
 
         </div>
@@ -171,11 +173,11 @@ Huomaa kuitenkin erityisesti sovelluksia miettiessäsi, että eri alustojen käy
     
 <p>Mobiililaitteille suunniteltaessa on hyvä pitää mielessä mobiililaitteiden erityispiirteistä johtuvat suunnitteluun vaikuttavat tekijät: </p>
 <ul>
-  <li>Pienet näytöt: Kännyköiden näyttöjen koot ovat tällä hetkellä 3.5-5 tuuman välillä. Tablettien näyttöjen koot ovat vakiintumassa 7-11 tuumaan.  </li>
-<li>Hankalat, epäyhtenäiset input-menetelmät, ei erillistä pointeria. Kosketusnäyttöjen lisääntyminen.</li>
+  <li>Pienet näytöt: Kännyköiden näyttöjen koot ovat tällä hetkellä 3.5-7 tuuman välillä. Tablettien näyttöjen koot ovat vakiintumassa 6-11 tuumaan.  </li>
+<li>Hankalat, epäyhtenäiset tekstinsyöttömenetelmät, kosketusnäyttöjen lisääntyminen.</li>
 <li>Rajallinen muisti ja prosessoriteho (hidas sivun renderöinti).</li>
 <li>Alhaisemmat tietoliikennenopeudet.</li></ul>
-<p>On hyvä pitää mielessä, että mobiililaitteiden kirjo on hyvin laaja. Erilaisia laitetyyppejä on satoja ja selainversioitakin on kymmeniä. Sen lisäksi, että laitteiden fyysiset ominaisuudet poikkeavat toisistaan (näytöt, input-menetelmät, jne), laitteiden tuki merkintäkielille (markup language), tyyleille (CSS), ja scriptikielille, kuvaformaatteille ja väreille vaihtelee. Esimerkiksi sivustoilla kuten <a href="http://caniuse.com">caniuse.com</a> voi tarkistaa miten eri selaimet tukevat eri teknologioita. 
+<p>Mobiililaitteiden kirjo on hyvin laaja. Erilaisia laitetyyppejä on satoja, selainversioitakin kymmeniä. Sen lisäksi, että laitteiden fyysiset ominaisuudet poikkeavat toisistaan (näytöt, näppäimistöt, kosketusnäytöt yms), laitteiden html-, css- ja javascript-tuki vaihtelee. Esimerkiksi sivustoilla kuten <a href="http://caniuse.com">caniuse.com</a> voi tarkistaa miten eri selaimet tukevat eri teknologioita. 
 </p>
         </div>
       </div>
@@ -188,8 +190,9 @@ Verkkosivun suunnittelussa on hyvä edetä sisältö edellä.
 <ul>
 <li>Aloita tekemällä inventaario sisällöstäsi: mitä tekstiä, kuvia, linkkejä sivullasi on.</li>
 <li>Priorisoi sisältö käyttäjän tarpeiden pohjalta. </li>
-<li>Ryhmittele sisältö kokonaisuuksista ja järjestä sivulla. Rakenteellista teksti (mm. suunnittele breakpointit eri laiteluokille).</li>
+<li>Ryhmittele sisältö kokonaisuuksista ja järjestä sivulla. Rakenteellista teksti, suunnittele <a href="sanasto.html#breakpoint">breakpointit</a> eri laiteluokille.</li>
 <li>Protoile designia oikealla sisällöllä ja iteroi. </li>
+</ul>
 </p>
         </div>
       </div>

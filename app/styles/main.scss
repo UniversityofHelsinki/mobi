@@ -97,7 +97,13 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   line-height: $ingress-line-height;
   letter-spacing: $ingress-letter-spacing;
   margin-bottom: 3rem;
-  text-align: center;
+  //text-align: center;
+  
+  // smaller font on mobile
+  @media (max-width: $screen-xs-max) {
+    font-size: $ingress-size / 1.5;
+    line-height: $ingress-line-height / 1.5;
+  }
 }
 
 
@@ -109,12 +115,18 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   letter-spacing: $bodytext-letter-spacing;
   margin-bottom: 3rem;
 }
-.hy-bodytext > p {
+.hy-bodytext > p, .hy-bodytext > ul, .hy-bodytext dd, .hy-bodytext dt {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.hy-bodytext > p + p {
+.hy-bodytext > p + p, .hy-bodytext > ul + ul, .hy-bodytext dd + dt  {
   margin-top: 3rem;
+}
+// remove ul indentation on mobile
+@media (max-width: $screen-xs-max) {
+  .hy-bodytext > ul {
+    padding-left: 1em;
+  }
 }
 
 %hy-bodytext-inversed {
@@ -167,6 +179,12 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   line-height: $heading-main-line-height;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+  
+  // smaller font on mobile
+  @media (max-width: $screen-xs-max) {
+    font-size: $heading-main-size / 1.5;
+    line-height: $heading-main-line-height / 1.5;
+  }
 }
 .hy-heading__section {
   @extend %hy-heading;
@@ -174,6 +192,12 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   line-height: $heading-section-line-height;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  
+  // smaller font on mobile
+  @media (max-width: $screen-xs-max) {
+    font-size: $heading-section-size / 1.5;
+    line-height: $heading-section-line-height / 1.5;
+  }
 }
 .hy-heading__article {
   @extend %hy-heading;
@@ -250,6 +274,9 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
 
 .hy-lift-triplewide {
   @extend %hy-background;
+  // override row margin-left/-right to align background color with content
+  margin-left: 0;
+  margin-right: 0;
 }
 .hy-lift-triplewide__image {
   // override bootstrap col padding-left/-right (15px)
@@ -265,12 +292,16 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
 }
 
 
+// background image only on desktop
 .hy-mosaic-background {
-  @include background(image-url("../images/etusivukuva.png"));
-  background-repeat: no-repeat;
-  background-position: bottom left;
   padding-top: 3rem;
   padding-bottom: 5rem;
+  
+  @media (min-width: $screen-md-min) {
+    @include background(image-url("../images/etusivukuva.png"));
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
 }
 // http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio
 // left/right margin/padding and width might break bootstrap grid
@@ -279,7 +310,6 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   padding-left: 1em;
   padding-right: 1em;
 }
-
 .hy-mosaic__item {
   display: inline-block;
   // even padding (bootstrap sets col padding-left/-right as 15px $grid-gutter-width / 2)
@@ -291,31 +321,36 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   &:first-child {
     background-color: #fff;
   }
-  // for mobile (2 columns)
-  &:nth-child(2), &:nth-child(3) {
+  &:nth-child(2), &:nth-child(4) {
     background-color: $link-color;
     
     .hy-mosaic__link {
       @extend .hy-link-inversed;
     }
   }
-  &:nth-child(4), &:nth-child(5) {
+  &:nth-child(3), &:nth-child(5) {
     background-color: #000;
     
     .hy-mosaic__link {
       @extend .hy-link-inversed;
     }
   }
-  // for tablet onwards (3 columns)
-  @media (min-width: $screen-sm-min) {
-    &:nth-child(2), &:nth-child(4) {
+}
+// small mobile
+@media (max-width: $screen-xs-min) {
+  .hy-col-xxs {
+    @include make-xs-column(6);
+  }
+  .hy-mosaic__item {
+    &:nth-child(2), &:nth-child(3) {
       background-color: $link-color;
     }
-    &:nth-child(3), &:nth-child(5) {
+    &:nth-child(4), &:nth-child(5) {
       background-color: #000;
     }
   }
 }
+
 .hy-mosaic__ratio--square {
   padding-top: 100%; // 1:1 aspect ratio
 }

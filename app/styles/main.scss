@@ -298,7 +298,7 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   padding-bottom: 5rem;
   
   @media (min-width: $screen-md-min) {
-    @include background(image-url("../images/etusivukuva.png"));
+    @include background(image-url("etusivukuva.png"));
     background-repeat: no-repeat;
     background-position: bottom left;
   }

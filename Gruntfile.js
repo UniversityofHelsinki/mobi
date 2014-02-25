@@ -1,4 +1,4 @@
-// Generated on 2013-12-31 using generator-webapp 0.4.6
+// Generated on 2014-02-19 using generator-webapp 0.4.7
 'use strict';
 
 // # Globbing
@@ -7,7 +7,7 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function (grunt) { 
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
@@ -139,6 +139,7 @@ module.exports = function (grunt) {
 
 
 
+
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
@@ -158,7 +159,11 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+                    // added options for relative image and font paths
+                    // generatedImagesDir seemed unused
+                    //generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+                    httpImagesPath: '../images',
+                    httpFontsPath: '../styles/fonts'
                 }
             },
             server: {
@@ -306,8 +311,15 @@ module.exports = function (grunt) {
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*'
+                        'bower_components/' + (this.includeCompass ? 'sass-' : '') + 'bootstrap/' + (this.includeCompass ? 'fonts/' : 'dist/fonts/') +'*.*'
                     ]
+                },
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.dist %>',
+                    src: 'bower_components/sass-bootstrap/fonts/*.*'
                 }]
             },
             styles: {
@@ -385,7 +397,11 @@ module.exports = function (grunt) {
             'mocha'
         ]);
     });
-
+    
+    // as there is an issue with image and font paths referenced from css
+    // we need to add relative paths to compass.dist.options for images and fonts
+    // relative paths break rev, so it's disabled (not really needed for caching anyway)
+    // to fix sass-bootstrap glyphicons, copy.
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -396,7 +412,7 @@ module.exports = function (grunt) {
         'uglify',
         'copy:dist',
         'modernizr',
-        'rev',
+        //'rev',
         'usemin',
         'htmlmin'
     ]);

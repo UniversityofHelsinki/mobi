@@ -38,12 +38,37 @@ The web pages are built with Bootstrap 3 grid and components and don't contain a
 5. Url should open automatically in default browser. If not, browse to url at the end of prompt.
 
 
+## Project dependencies
+
+This project has three different dependencies
+
+* npm dependencies in package.json
+  * add new npm dependency by `npm install packagename --save-dev` 
+  --save-dev adds packagename and version to package.json
+  * after committing/pushing the changes to git, others will have to run `npm install`  
+  after they have pulled the changes to install updated/added versions of the dependencies to their local machine
+* bower dependencies in bower.json
+  * add new bower dependency by `bower install packagename --save`  
+  --save adds packagename and version to bower.json
+  * after committing/pushing the changes to git, others will have to run `bower install`  
+  after they have pulled the changes to install updated/added versions of the dependencies to their local machine
+* compass dependencies in Gruntfile.js compass:options:require
+  * install new compass dependency from gem
+  * add new compass dependency to Gruntfile.js
+  * after committing/pushing the changes to git, others will have to install the required compass dependencies from gem to their local machine after they have pulled the changes
+
+
+## Development
+
+All the development happens in __app__ directory
+
+You should not make changes to __dist__ directory, because each `grunt build` will overwrite the changes. The files contain also all the css and js from bower dependencies, e.g. __bootstrap css and js__ which you shouldn't touch.
+
+
 ## Deployment
 
 1. Build project
 	* in project root directory `grunt build`
 	* grunt will create new folder __dist__ that contains the published project
 	* you can also test the built project with `grunt serve:dist` (will also build the project)
-	* __NOTE__: you can preview the html files in browser without a web server but some image paths might not match
 2. Move contents of the dist directory to a web server
-	

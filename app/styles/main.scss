@@ -300,7 +300,7 @@ $link-color-hover-on-background: darken($link-color-on-background, 15%);
   @media (min-width: $screen-md-min) {
     @include background(image-url("etusivukuva.png"));
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom center;
   }
 }
 // http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio
